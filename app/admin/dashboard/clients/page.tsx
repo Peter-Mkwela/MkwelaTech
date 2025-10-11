@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Filter, MoreVertical, Mail, Phone, UserPlus } from 'lucide-react';
+import { Search, Filter, MoreVertical, UserPlus } from 'lucide-react';
 
 export default function AdminClients() {
   const clients = [

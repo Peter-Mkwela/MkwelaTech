@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Filter, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function AdminRequests() {
   const [statusFilter, setStatusFilter] = useState('all');

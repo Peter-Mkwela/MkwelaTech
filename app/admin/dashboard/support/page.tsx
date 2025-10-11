@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Filter, MessageCircle, Clock, CheckCircle, AlertCircle, Mail } from 'lucide-react';
+import { Search,  MessageCircle, Clock, CheckCircle, AlertCircle, Mail } from 'lucide-react';
 
 export default function AdminSupport() {
   const tickets = [
@@ -11,13 +11,6 @@ export default function AdminSupport() {
     { id: '#TICKET-004', client: 'Sarah Wilson', subject: 'Account access problem', status: 'Open', priority: 'High', lastUpdate: '5 hours ago', messages: 1 },
   ];
 
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'Resolved': return CheckCircle;
-      case 'In Progress': return Clock;
-      default: return AlertCircle;
-    }
-  };
 
   return (
     <div className="p-8">
@@ -115,7 +108,6 @@ export default function AdminSupport() {
           className="space-y-4"
         >
           {tickets.map((ticket, index) => {
-            const StatusIcon = getStatusIcon(ticket.status);
             return (
               <motion.div
                 key={ticket.id}

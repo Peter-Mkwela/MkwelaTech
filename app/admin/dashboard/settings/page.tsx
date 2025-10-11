@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Save, Bell, Shield, User, CreditCard, Globe, Database, Mail } from 'lucide-react';
+import { Save, Bell, Shield, User, CreditCard, Globe } from 'lucide-react';
 
 export default function AdminSettings() {
   const [activeTab, setActiveTab] = useState('general');

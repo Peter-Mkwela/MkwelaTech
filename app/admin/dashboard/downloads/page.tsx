@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Filter, Download, FileText, Image, Archive, Video, Upload } from 'lucide-react';
+import { Search, Download, FileText, Image, Archive, Video, Upload } from 'lucide-react';
 
 export default function AdminDownloads() {
   const files = [

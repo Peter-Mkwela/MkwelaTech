@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Filter, Download, CheckCircle, XCircle, Clock, CreditCard, DollarSign } from 'lucide-react';
+import { Search, Download, CheckCircle, XCircle, Clock,  DollarSign } from 'lucide-react';
 
 export default function AdminPayments() {
   const payments = [
