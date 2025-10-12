@@ -130,15 +130,7 @@ export default function AdminSettings() {
                           <div className="font-medium text-white">{item.label}</div>
                           <div className="text-sm text-gray-400">{item.description}</div>
                         </div>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                          <input 
-                            type="checkbox" 
-                            className="sr-only peer" 
-                            checked={settings[item.key as keyof typeof settings] as boolean}
-                            onChange={(e) => setSettings({...settings, [item.key]: e.target.checked})}
-                          />
-                          <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
-                        </label>
+                        
                       </div>
                     ))}
                   </div>
