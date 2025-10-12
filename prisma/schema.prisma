@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   email         String    @unique
   name          String?
   phone         String?
@@ -33,7 +33,7 @@ model User {
 
 model Account {
   id                String  @id @default(cuid())
-  userId            Int
+  userId            String
   type              String
   provider          String
   providerAccountId String
@@ -54,7 +54,7 @@ model Account {
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       Int
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -87,10 +87,10 @@ model Service {
 }
 
 model Order {
-  id          String      @id @default(cuid())
+  id          String      @id @default(uuid())
   orderNumber String      @unique
   serviceId   String
-  userId      Int
+  userId      String
   status      OrderStatus @default(PENDING)
   priority    Priority    @default(MEDIUM)
   description String?
@@ -106,10 +106,10 @@ model Order {
 }
 
 model Payment {
-  id            String        @id @default(cuid())
+  id            String        @id @default(uuid())
   paymentId     String        @unique
   orderId       String        @unique
-  userId        Int
+  userId        String
   amount        Float
   currency      String        @default("USD")
   status        PaymentStatus @default(PENDING)
@@ -117,7 +117,7 @@ model Payment {
   transactionId String?
   notes         String?
   createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+  updatedAt     DateTime      @default(now())
 
   order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
   user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -126,15 +126,15 @@ model Payment {
 }
 
 model SupportTicket {
-  id          String       @id @default(cuid())
+  id          String       @id @default(uuid())
   ticketId    String       @unique
-  userId      Int
+  userId      String
   subject     String
   description String
   status      TicketStatus @default(OPEN)
   priority    Priority     @default(MEDIUM)
   createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  updatedAt   DateTime     @default(now())
 
   user     User                   @relation(fields: [userId], references: [id])
   messages SupportTicketMessage[]
@@ -143,9 +143,9 @@ model SupportTicket {
 }
 
 model SupportTicketMessage {
-  id        String   @id @default(cuid())
+  id        String   @id @default(uuid())
   ticketId  String
-  userId    Int
+  userId    String
   content   String
   isAdmin   Boolean  @default(false)
   createdAt DateTime @default(now())
@@ -157,12 +157,12 @@ model SupportTicketMessage {
 }
 
 model Download {
-  id            String   @id @default(cuid())
+  id            String   @id @default(uuid())
   fileName      String
   filePath      String
   fileSize      Int
   fileType      String
-  userId        Int
+  userId        String
   description   String?
   downloadCount Int      @default(0)
   createdAt     DateTime @default(now())
@@ -214,7 +214,7 @@ enum Priority {
 }
 
 model PasswordReset {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   email     String
   token     String   @unique
   expiresAt DateTime
@@ -222,11 +222,10 @@ model PasswordReset {
 }
 
 model ContactMessage {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   email     String
   subject   String
   message   String
   createdAt DateTime @default(now())
 }
-
