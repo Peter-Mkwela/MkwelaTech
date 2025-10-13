@@ -1,6 +1,6 @@
 // app/api/auth/register/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import prisma from '@/lib/prisma';
 import { UserRole, Prisma } from '@prisma/client'; // ✅ Use Prisma namespace for types
 
