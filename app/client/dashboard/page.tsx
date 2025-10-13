@@ -12,7 +12,7 @@ export default function ClientDashboard() {
   useEffect(() => {
     const email = localStorage.getItem('clientEmail');
     if (!email) {
-      router.push('/client/login');
+      router.push('/client/dashboard');
     } else {
       setClientEmail(email);
     }
