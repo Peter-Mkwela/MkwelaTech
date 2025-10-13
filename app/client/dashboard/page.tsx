@@ -6,7 +6,7 @@ import { Plus, Cpu, HardDrive, Palette, Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function ClientDashboard() {
-  const [clientEmail, setClientEmail] = useState('');
+  const [, setClientEmail] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function ClientDashboard() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-6 sm:mb-8">
         <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">Dashboard Overview</h1>
         <p className="text-gray-400 text-sm sm:text-base">
-          Welcome back, <span className="font-medium text-white">{clientEmail || 'client@mail.com'}</span>! Here’s your activity summary.
+          Welcome back, Here’s your activity summary.
         </p>
       </motion.div>
 
