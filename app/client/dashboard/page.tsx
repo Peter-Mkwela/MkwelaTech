@@ -18,11 +18,12 @@ export default function ClientDashboard() {
     }
   }, [router]);
 
+  // Show zero when there’s no data
   const stats = [
-    { label: 'Active Requests', value: 3 },
-    { label: 'Completed Services', value: 12 },
-    { label: 'Pending Payments', value: 1 },
-    { label: 'Support Tickets', value: 2 },
+    { label: 'Active Requests', value: 0 },
+    { label: 'Completed Services', value: 0 },
+    { label: 'Pending Payments', value: 0 },
+    { label: 'Support Tickets', value: 0 },
   ];
 
   const services = [
@@ -37,14 +38,18 @@ export default function ClientDashboard() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Welcome Header */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-6 sm:mb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mb-6 sm:mb-8"
+      >
         <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">Dashboard Overview</h1>
         <p className="text-gray-400 text-sm sm:text-base">
-          Welcome back, Here’s your activity summary.
+          Welcome back! Here’s your activity summary and available services.
         </p>
       </motion.div>
 
-      {/* Stats Grid */}
+      {/* Stats Grid (always shown, default 0 values) */}
       <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-8">
         {stats.map((stat, index) => (
           <motion.div
