@@ -426,6 +426,34 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+            {/* Floating WhatsApp Icon - Matches Back to Top Style */}
+      <motion.a
+        href="https://wa.me/263710312818?text=Hi%20MkwelaTech%2C" // Change to your actual WhatsApp link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-400 transition-colors flex items-center justify-center"
+        animate={{
+          y: [0, -8, 0],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.6,
+          ease: "easeInOut",
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+          viewBox="0 0 24 24"
+          stroke="none"
+          className="w-6 h-6"
+        >
+          <path d="M12.04 2c-5.5 0-9.97 4.47-9.97 9.97 0 1.76.46 3.47 1.35 4.99L2 22l5.26-1.38a9.93 9.93 0 0 0 4.78 1.22h.01c5.5 0 9.97-4.47 9.97-9.97S17.54 2 12.04 2zm0 18.24a8.24 8.24 0 0 1-4.2-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 6.99 3.87zM17 14.5c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14-.19.27-.74.91-.91 1.1-.17.18-.33.2-.61.07-.28-.14-1.18-.43-2.25-1.37-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.55.12-.12.28-.33.41-.49.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.64-1.54-.88-2.1-.23-.55-.47-.47-.64-.48l-.55-.01c-.18 0-.48.07-.74.34s-.97.95-.97 2.31.99 2.67 1.13 2.85c.14.18 1.95 2.98 4.72 4.17.66.29 1.18.47 1.59.6.67.21 1.28.18 1.77.11.54-.08 1.66-.68 1.89-1.33.23-.65.23-1.21.16-1.33-.07-.12-.25-.19-.52-.33z" />
+        </svg>
+      </motion.a>
+
     </div>
   );
 }
