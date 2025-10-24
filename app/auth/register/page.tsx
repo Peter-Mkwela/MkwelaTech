@@ -218,8 +218,8 @@ export default function RegisterPage() {
               <input type="checkbox" name="agreeToTerms" checked={formData.agreeToTerms} onChange={handleChange} className="w-4 h-4 mt-1 text-[#FFA500] bg-white/10 border-white/20 rounded focus:ring-[#FFA500]" required />
               <label className="text-sm text-[#FFE5B4]">
                 I agree to the{' '}
-                <Link href="/terms" className="text-[#FFA500] hover:text-white transition-colors">Terms of Service</Link> and{' '}
-                <Link href="/privacy" className="text-[#FFA500] hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/terms-of-service" className="text-[#FFA500] hover:text-white transition-colors">Terms of Service</Link> and{' '}
+                <Link href="/privacy-policy" className="text-[#FFA500] hover:text-white transition-colors">Privacy Policy</Link>
               </label>
             </motion.div>
 
